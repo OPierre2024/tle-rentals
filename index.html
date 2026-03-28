@@ -1027,31 +1027,7 @@ async function jbSaveKey() {
     localStorage.removeItem('tle_jb_bin');
   }
 
-  // Search for existing TLE gist before creating a new one
-  gDriveStatus('Searching for existing cloud data…', '🔄');
-  try {
-    const searchResp = await fetch(GH_API + '/gists', {
-      headers: {
-        'Authorization': 'Bearer ' + jbKey,
-        'Accept': 'application/vnd.github+json',
-        'X-GitHub-Api-Version': '2022-11-28'
-      }
-    });
-    if (searchResp.ok) {
-      const gists = await searchResp.json();
-      const existing = gists.find(g => g.description && g.description.includes('TLE Rental App Data') && g.files && g.files[GH_FILE]);
-      if (existing) {
-        jbBin = existing.id;
-        localStorage.setItem('tle_gh_gist', jbBin);
-        jbOn = true; _jbBtn(true);
-        gDriveStatus('Connected ✓ — found existing cloud data', '☁️');
-        showToast('☁️ Connected to existing cloud!');
-        return;
-      }
-    }
-  } catch(e) { console.warn('[TLE] Gist search failed, will create new:', e.message); }
-
-  // No existing gist found — create new one
+  // Create new gist
   gDriveStatus('Creating cloud storage…', '🔄');
   try {
     const resp = await fetch(GH_API + '/gists', {
