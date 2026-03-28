@@ -1195,10 +1195,12 @@ function jbShowError(msg) {
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
-  if (jbKey && jbBin) {
-    jbOn = true; _jbBtn(true); gDriveStatus('Connected', '\u2601\uFE0F');
-  } else if (jbKey && !jbBin) {
-    gDriveStatus('Auto-connecting\u2026', '\uD83D\uDD04');
+  if (_EMBEDDED_TOKEN) {
+    jbKey = _EMBEDDED_TOKEN;
+    localStorage.setItem('tle_gh_token', jbKey);
+  }
+  if (jbKey) {
+    gDriveStatus('Connecting\u2026', '\uD83D\uDD04');
     try {
       const searchResp = await fetch(GH_API + '/gists', {
         headers: { 'Authorization': 'Bearer ' + jbKey, 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' }
@@ -1209,9 +1211,8 @@ window.addEventListener('DOMContentLoaded', async () => {
         if (existing) {
           jbBin = existing.id;
           localStorage.setItem('tle_gh_gist', jbBin);
-          localStorage.setItem('tle_gh_token', jbKey);
           jbOn = true; _jbBtn(true);
-          gDriveStatus('Auto-connected \u2713', '\u2601\uFE0F');
+          gDriveStatus('Connected \u2713', '\u2601\uFE0F');
         } else {
           const createResp = await fetch(GH_API + '/gists', {
             method: 'POST',
@@ -1222,13 +1223,12 @@ window.addEventListener('DOMContentLoaded', async () => {
             const d = await createResp.json();
             jbBin = d.id;
             localStorage.setItem('tle_gh_gist', jbBin);
-            localStorage.setItem('tle_gh_token', jbKey);
             jbOn = true; _jbBtn(true);
-            gDriveStatus('Auto-connected \u2713 \u2014 ready', '\u2601\uFE0F');
+            gDriveStatus('Connected \u2713 \u2014 ready', '\u2601\uFE0F');
           }
         }
       }
-    } catch(e) { gDriveStatus('Auto-connect failed: ' + e.message, '\u26A0\uFE0F'); }
+    } catch(e) { gDriveStatus('Connect failed: ' + e.message, '\u26A0\uFE0F'); }
   }
 });
 /* ==================== END GITHUB GIST CLOUD SYNC (MOBILE) ==================== */
