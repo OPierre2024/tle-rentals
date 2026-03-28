@@ -1027,8 +1027,32 @@ async function jbSaveKey() {
     localStorage.removeItem('tle_jb_bin');
   }
 
-  // Create new gist
-  gDriveStatus('Creating cloud storage…', '🔄');
+  // Search for existing TLE gist before creating a new one
+  gDriveStatus('Searching for existing cloud data\u2026', '\uD83D\uDD04');
+  try {
+    const searchResp = await fetch(GH_API + '/gists', {
+      headers: {
+        'Authorization': 'Bearer ' + jbKey,
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    });
+    if (searchResp.ok) {
+      const gists = await searchResp.json();
+      const existing = gists.find(g => g.description && g.description.includes('TLE Rental App Data') && g.files && g.files[GH_FILE]);
+      if (existing) {
+        jbBin = existing.id;
+        localStorage.setItem('tle_gh_gist', jbBin);
+        jbOn = true; _jbBtn(true);
+        gDriveStatus('Connected \u2713 \u2014 found existing cloud data', '\u2601\uFE0F');
+        showToast('\u2601\uFE0F Connected to existing cloud!');
+        return;
+      }
+    }
+  } catch(e) { console.warn('[TLE] Gist search failed, will create new:', e.message); }
+
+  // No existing gist found - create new one
+  gDriveStatus('Creating cloud storage\u2026', '\uD83D\uDD04');
   try {
     const resp = await fetch(GH_API + '/gists', {
       method: 'POST',
@@ -1039,7 +1063,7 @@ async function jbSaveKey() {
         'X-GitHub-Api-Version': '2022-11-28'
       },
       body: JSON.stringify({
-        description: 'TLE Rental App Data — do not delete',
+        description: 'TLE Rental App Data \u2014 do not delete',
         public: false,
         files: { [GH_FILE]: { content: JSON.stringify({ _created: new Date().toISOString() }) } }
       })
@@ -1051,8 +1075,8 @@ async function jbSaveKey() {
       jbBin = d.id;
       localStorage.setItem('tle_gh_gist', jbBin);
       jbOn = true; _jbBtn(true);
-      gDriveStatus('Connected ✓ — ready to sync', '☁️');
-      showToast('☁️ Cloud storage ready!');
+      gDriveStatus('Connected \u2713 \u2014 ready to sync', '\u2601\uFE0F');
+      showToast('\u2601\uFE0F Cloud storage ready!');
     } else { jbShowError('Unexpected: ' + JSON.stringify(d).slice(0,150)); }
   } catch(e) { jbShowError('Network error: ' + e.message); }
 }
