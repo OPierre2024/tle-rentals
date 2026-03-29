@@ -989,6 +989,43 @@ function buildMobileCombinedReceipt() {
 }
 /* ==================== END MOBILE COMBINED RECEIPT ==================== */
 
+/* ==================== WHATSAPP NOTIFICATIONS ====================  */
+function sendWhatsAppNotification(type, entry) {
+  try {
+    const totalRevenue  = mobileData.rentals.reduce((s, r) => s + (r.total || 0), 0);
+    const totalExpenses = mobileData.expenses.reduce((s, e) => s + (e.amount || 0), 0);
+    const net = totalRevenue - totalExpenses;
+    const fmt = n => 'TTD ' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+    let msg = '';
+    if (type === 'rental') {
+      const v = VEHICLES.find(x => x.id === entry.vehicleId);
+      const vName = v ? v.brand + ' ' + v.model + ' (' + v.plate + ')' : 'Vehicle #' + entry.vehicleId;
+      const dateRange = entry.start === entry.end ? entry.start : entry.start + ' to ' + entry.end;
+      msg  = '\uD83D\uDE97 *New Rental \u2014 TLE Transport*\n\n';
+      msg += '\uD83D\uDC64 Client: ' + (entry.clientName || 'N/A') + '\n';
+      msg += '\uD83D\uDE99 Vehicle: ' + vName + '\n';
+      msg += '\uD83D\uDCC5 Dates: ' + dateRange + ' (' + entry.days + ' day' + (entry.days > 1 ? 's' : '') + ')\n';
+      if (entry.status) msg += '\uD83D\uDCCB Status: ' + entry.status + '\n';
+      msg += '\uD83D\uDCB0 Amount: ' + fmt(entry.total) + '\n';
+    } else {
+      msg  = '\uD83D\uDCB8 *New Expense \u2014 TLE Transport*\n\n';
+      msg += '\uD83D\uDCC2 Category: ' + (entry.category || 'General') + '\n';
+      msg += '\uD83D\uDCDD Description: ' + (entry.description || 'N/A') + '\n';
+      msg += '\uD83D\uDCC5 Date: ' + entry.date + '\n';
+      msg += '\uD83D\uDCB0 Amount: ' + fmt(entry.amount) + '\n';
+    }
+    msg += '\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n';
+    msg += '\uD83D\uDCCA *Summary*\n';
+    msg += '\uD83D\uDCB5 Total Revenue:  ' + fmt(totalRevenue) + '\n';
+    msg += '\uD83D\uDCE4 Total Expenses: ' + fmt(totalExpenses) + '\n';
+    msg += '\u2705 Net:            ' + fmt(net);
+
+    window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+  } catch(e) { console.warn('[TLE] WhatsApp notification failed:', e.message); }
+}
+/* ==================== END WHATSAPP NOTIFICATIONS ==================== */
+
 /* ==================== GITHUB GIST CLOUD SYNC (MOBILE) ==================== */
 const GH_API  = 'https://api.github.com';
 const GH_FILE = 'tle_rental_data.json';
