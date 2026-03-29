@@ -1021,7 +1021,9 @@ function sendWhatsAppNotification(type, entry) {
     msg += '\uD83D\uDCE4 Total Expenses: ' + fmt(totalExpenses) + '\n';
     msg += '\u2705 Net:            ' + fmt(net);
 
-    _showWABanner('https://wa.me/?text=' + encodeURIComponent(msg), msg);
+    const _waUrl = 'https://wa.me/?text=' + encodeURIComponent(msg);
+    const _waMsg = msg;
+    setTimeout(function(){ _showWABanner(_waUrl, _waMsg); }, 1000);
   } catch(e) { console.warn('[TLE] WhatsApp notification failed:', e.message); }
 }
 
