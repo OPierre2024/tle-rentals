@@ -158,32 +158,32 @@
     </div>
 
     <button class="big-btn big-btn-rental" onclick="showScreen('screen-rental'); initRentalForm()">
-      <span class="big-btn-icon">ð</span>
+      <span class="big-btn-icon">🚗</span>
       <span>ADD RENTAL</span>
     </button>
 
     <button class="big-btn big-btn-expense" onclick="showScreen('screen-expense'); initExpenseForm()">
-      <span class="big-btn-icon">ð¸</span>
+      <span class="big-btn-icon">💸</span>
       <span>ADD EXPENSE</span>
     </button>
 
     <button class="big-btn" style="background:linear-gradient(135deg,#d97706,#f59e0b);color:#1e293b;" onclick="showScreen('screen-receipt'); initReceiptScreen()">
-      <span class="big-btn-icon">ð§¾</span>
+      <span class="big-btn-icon">🧾</span>
       <span>CREATE RECEIPT</span>
     </button>
   </div>
 
   <nav class="bottom-nav">
-    <button class="bnav-btn active" onclick="showScreen('screen-home')"><span class="icon">ð </span>Home</button>
-    <button class="bnav-btn" onclick="showScreen('screen-entries'); renderEntries()"><span class="icon">ð</span>Entries</button>
-    <button class="bnav-btn" onclick="showScreen('screen-export'); renderExport()"><span class="icon">ð¤</span>Export</button>
+    <button class="bnav-btn active" onclick="showScreen('screen-home')"><span class="icon">🏠</span>Home</button>
+    <button class="bnav-btn" onclick="showScreen('screen-entries'); renderEntries()"><span class="icon">📋</span>Entries</button>
+    <button class="bnav-btn" onclick="showScreen('screen-export'); renderExport()"><span class="icon">📤</span>Export</button>
   </nav>
 </div>
 
 <!-- ========== ADD RENTAL SCREEN ========== -->
 <div class="screen" id="screen-rental">
   <div class="topbar">
-    <button class="btn-back" onclick="showScreen('screen-home')">â Back</button>
+    <button class="btn-back" onclick="showScreen('screen-home')">← Back</button>
     <div class="topbar-info">
       <div class="topbar-title">New Rental</div>
       <div class="topbar-sub">Enter rental details</div>
@@ -200,7 +200,7 @@
 
       <label>Vehicle</label>
       <select id="r-vehicle" onchange="mRUpdateRate()">
-        <option value="">â Select vehicle â</option>
+        <option value="">— Select vehicle —</option>
       </select>
 
       <label>Status</label>
@@ -216,8 +216,8 @@
 
       <!-- Mode toggle -->
       <div style="display:flex;gap:8px;margin-bottom:12px;">
-        <button id="m-btn-single" onclick="mRSetMode('single')" style="flex:1;padding:10px;border-radius:10px;border:none;font-size:14px;font-weight:700;cursor:pointer;background:#1a56db;color:#fff;">ð Single Day</button>
-        <button id="m-btn-range"  onclick="mRSetMode('range')"  style="flex:1;padding:10px;border-radius:10px;border:1px solid #e5e7eb;font-size:14px;font-weight:700;cursor:pointer;background:#fff;color:#374151;">ð Date Range</button>
+        <button id="m-btn-single" onclick="mRSetMode('single')" style="flex:1;padding:10px;border-radius:10px;border:none;font-size:14px;font-weight:700;cursor:pointer;background:#1a56db;color:#fff;">📅 Single Day</button>
+        <button id="m-btn-range"  onclick="mRSetMode('range')"  style="flex:1;padding:10px;border-radius:10px;border:1px solid #e5e7eb;font-size:14px;font-weight:700;cursor:pointer;background:#fff;color:#374151;">📅 Date Range</button>
       </div>
 
       <!-- Single day section -->
@@ -235,7 +235,7 @@
           <div><label>Start Date</label><input type="date" id="r-range-start"></div>
           <div><label>End Date</label><input type="date" id="r-range-end"></div>
         </div>
-        <button onclick="mRFillRange()" style="width:100%;padding:10px;background:#1a56db;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;">Fill Days â¶</button>
+        <button onclick="mRFillRange()" style="width:100%;padding:10px;background:#1a56db;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;">Fill Days ▶</button>
       </div>
 
       <!-- Day list -->
@@ -257,17 +257,17 @@
     <div class="form-section">
       <div class="form-section-title">Notes</div>
       <label>Notes <span class="optional-tag">(optional)</span></label>
-      <textarea id="r-notes" placeholder="Any additional notesâ¦"></textarea>
+      <textarea id="r-notes" placeholder="Any additional notes…"></textarea>
     </div>
 
-    <button class="save-btn save-btn-rental" onclick="saveRental()">ð¾ SAVE RENTAL</button>
+    <button class="save-btn save-btn-rental" onclick="saveRental()">💾 SAVE RENTAL</button>
   </div>
 </div>
 
 <!-- ========== ADD EXPENSE SCREEN ========== -->
 <div class="screen" id="screen-expense">
   <div class="topbar">
-    <button class="btn-back" onclick="showScreen('screen-home')">â Back</button>
+    <button class="btn-back" onclick="showScreen('screen-home')">← Back</button>
     <div class="topbar-info">
       <div class="topbar-title">New Expense</div>
       <div class="topbar-sub">Enter expense details</div>
@@ -294,7 +294,7 @@
 
       <label>Vehicle <span class="optional-tag">(optional)</span></label>
       <select id="e-vehicle">
-        <option value="">â All / General â</option>
+        <option value="">— All / General —</option>
       </select>
     </div>
 
@@ -308,14 +308,14 @@
       <input type="number" id="e-amount" placeholder="0.00" step="0.01" min="0">
     </div>
 
-    <button class="save-btn save-btn-expense" onclick="saveExpense()">ð¾ SAVE EXPENSE</button>
+    <button class="save-btn save-btn-expense" onclick="saveExpense()">💾 SAVE EXPENSE</button>
   </div>
 </div>
 
 <!-- ========== ENTRIES SCREEN ========== -->
 <div class="screen" id="screen-entries">
   <div class="topbar">
-    <button class="btn-back" onclick="showScreen('screen-home')">â Back</button>
+    <button class="btn-back" onclick="showScreen('screen-home')">← Back</button>
     <div class="topbar-info">
       <div class="topbar-title">My Entries</div>
       <div class="topbar-sub">Review before exporting</div>
@@ -326,28 +326,28 @@
     <span class="sel-count" id="select-count">0 selected</span>
     <button class="sel-btn" onclick="selectAllEntries()">Select All</button>
     <button class="sel-btn" onclick="clearSelection()">Clear</button>
-    <button class="sel-btn share" onclick="shareSelected()">ð¤ Share</button>
+    <button class="sel-btn share" onclick="shareSelected()">📤 Share</button>
   </div>
 
   <div class="entries-body">
     <div class="tab-row">
-      <button class="tab active" id="tab-rentals" onclick="switchTab('rentals')">ð Rentals</button>
-      <button class="tab" id="tab-expenses" onclick="switchTab('expenses')">ð¸ Expenses</button>
+      <button class="tab active" id="tab-rentals" onclick="switchTab('rentals')">🚗 Rentals</button>
+      <button class="tab" id="tab-expenses" onclick="switchTab('expenses')">💸 Expenses</button>
     </div>
     <div id="entries-list"></div>
   </div>
 
   <nav class="bottom-nav">
-    <button class="bnav-btn" onclick="showScreen('screen-home')"><span class="icon">ð </span>Home</button>
-    <button class="bnav-btn active"><span class="icon">ð</span>Entries</button>
-    <button class="bnav-btn" onclick="showScreen('screen-export'); renderExport()"><span class="icon">ð¤</span>Export</button>
+    <button class="bnav-btn" onclick="showScreen('screen-home')"><span class="icon">🏠</span>Home</button>
+    <button class="bnav-btn active"><span class="icon">📋</span>Entries</button>
+    <button class="bnav-btn" onclick="showScreen('screen-export'); renderExport()"><span class="icon">📤</span>Export</button>
   </nav>
 </div>
 
 <!-- ========== EXPORT SCREEN ========== -->
 <div class="screen" id="screen-export">
   <div class="topbar">
-    <button class="btn-back" onclick="showScreen('screen-home')">â Back</button>
+    <button class="btn-back" onclick="showScreen('screen-home')">← Back</button>
     <div class="topbar-info">
       <div class="topbar-title">Export to Desktop</div>
       <div class="topbar-sub">Send data to main app</div>
@@ -356,7 +356,7 @@
 
   <div class="export-body">
     <div class="export-card">
-      <h3>ð Entries Ready to Export</h3>
+      <h3>📊 Entries Ready to Export</h3>
       <p>These entries will be merged into the main TLE desktop app.</p>
       <div class="stats-row">
         <div class="stat-box">
@@ -371,35 +371,35 @@
     </div>
 
     <div class="how-to export-card">
-      <h4>ð± How to sync with desktop:</h4>
+      <h4>📱 How to sync with desktop:</h4>
       <ol>
         <li>Tap <strong>Export JSON File</strong> below</li>
         <li>Share the file to yourself (WhatsApp, Email, etc.)</li>
         <li>Open the file on your computer</li>
         <li>In the desktop app, click <strong>Import from Mobile</strong></li>
-        <li>Select the JSON file â done! â</li>
+        <li>Select the JSON file — done! ✅</li>
       </ol>
     </div>
 
 
     <div class="export-card" style="border:2px solid #1a56db;">
-      <h3 style="color:#1a56db;">âï¸ Auto-Sync to Google Drive</h3>
-      <p>Connect once â every entry syncs directly to the shared TLE data file in Google Drive. Your desktop app will see the data instantly.</p>
+      <h3 style="color:#1a56db;">☁️ Auto-Sync to Google Drive</h3>
+      <p>Connect once — every entry syncs directly to the shared TLE data file in Google Drive. Your desktop app will see the data instantly.</p>
       <div style="margin-top:12px;display:flex;flex-direction:column;gap:10px;">
-        <button id="btn-gdrive-connect" onclick="jbConnect()" style="width:100%;padding:15px;background:#1a3a6b;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;">ð Connect Google Drive</button>
-        <button onclick="gMergeAndSync()" style="width:100%;padding:15px;background:linear-gradient(135deg,#059669,#10b981);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;">ð Sync Now to Drive</button>
+        <button id="btn-gdrive-connect" onclick="jbConnect()" style="width:100%;padding:15px;background:#1a3a6b;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;">🔗 Connect Google Drive</button>
+        <button onclick="gMergeAndSync()" style="width:100%;padding:15px;background:linear-gradient(135deg,#059669,#10b981);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;">🚀 Sync Now to Drive</button>
         <p id="gdrive-sync-status" style="text-align:center;font-size:12px;color:#64748b;margin:0;min-height:16px;"></p>
       </div>
     </div>
 
-    <button class="export-btn" onclick="exportData()">ð¥ Export JSON File</button>
-    <button class="clear-btn" onclick="clearAllData()">ð Clear All Mobile Entries</button>
+    <button class="export-btn" onclick="exportData()">📥 Export JSON File</button>
+    <button class="clear-btn" onclick="clearAllData()">🗑 Clear All Mobile Entries</button>
   </div>
 
   <nav class="bottom-nav">
-    <button class="bnav-btn" onclick="showScreen('screen-home')"><span class="icon">ð </span>Home</button>
-    <button class="bnav-btn" onclick="showScreen('screen-entries'); renderEntries()"><span class="icon">ð</span>Entries</button>
-    <button class="bnav-btn active"><span class="icon">ð¤</span>Export</button>
+    <button class="bnav-btn" onclick="showScreen('screen-home')"><span class="icon">🏠</span>Home</button>
+    <button class="bnav-btn" onclick="showScreen('screen-entries'); renderEntries()"><span class="icon">📋</span>Entries</button>
+    <button class="bnav-btn active"><span class="icon">📤</span>Export</button>
   </nav>
 </div>
 
@@ -423,7 +423,7 @@
 const MOBILE_KEY = 'tle_mobile_v1';
 let mobileData = { rentals: [], expenses: [], nextId: { rental: 1, expense: 1 } };
 
-// TLE Fleet â matches the desktop app vehicle IDs
+// TLE Fleet — matches the desktop app vehicle IDs
 const VEHICLES = [
   { id: 1,  code: "V001", brand: "Nissan",    model: "Tiida",        plate: "ABC-1234", color: "White" },
   { id: 2,  code: "V002", brand: "Nissan",    model: "Tiida",        plate: "DEF-5678", color: "Green" },
@@ -463,9 +463,9 @@ function showScreen(id) {
 
 // ===================== VEHICLE DROPDOWNS =====================
 function populateVehicleDropdowns() {
-  const opts = VEHICLES.map(v => `<option value="${v.id}">${v.code} Â· ${v.brand} ${v.model} (${v.color}) â ${v.plate}</option>`).join('');
-  document.getElementById('r-vehicle').innerHTML = '<option value="">â Select vehicle â</option>' + opts;
-  document.getElementById('e-vehicle').innerHTML = '<option value="">â All / General â</option>' + opts;
+  const opts = VEHICLES.map(v => `<option value="${v.id}">${v.code} · ${v.brand} ${v.model} (${v.color}) – ${v.plate}</option>`).join('');
+  document.getElementById('r-vehicle').innerHTML = '<option value="">— Select vehicle —</option>' + opts;
+  document.getElementById('e-vehicle').innerHTML = '<option value="">— All / General —</option>' + opts;
 }
 
 // ===================== RENTAL FORM (DAY-ENTRY) =====================
@@ -507,7 +507,7 @@ function mRAddRow(date, cost) {
       <span style="font-size:11px;color:#166534;font-weight:700;">TTD</span>
       <input type="number" value="${cost.toFixed(2)}" step="0.01" min="0" oninput="mRCalcTotal()" style="width:72px;border:none;background:transparent;font-size:14px;font-weight:700;color:#15803d;outline:none;">
     </div>
-    <button onclick="mRRemoveRow(this)" style="background:#fee2e2;border:none;border-radius:8px;color:#dc2626;font-size:16px;font-weight:700;cursor:pointer;padding:5px 9px;flex-shrink:0;">Ã</button>`;
+    <button onclick="mRRemoveRow(this)" style="background:#fee2e2;border:none;border-radius:8px;color:#dc2626;font-size:16px;font-weight:700;cursor:pointer;padding:5px 9px;flex-shrink:0;">×</button>`;
   list.appendChild(row);
   mRCalcTotal();
 }
@@ -526,7 +526,7 @@ function mRRemoveRow(btn) {
 function mRAddSingleDay() {
   const dateEl = document.getElementById('r-single-date');
   const date = dateEl.value;
-  if (!date) { showToast('â ï¸ Please select a date first'); return; }
+  if (!date) { showToast('⚠️ Please select a date first'); return; }
   mRAddRow(date, _mRDailyRate);
   const d = new Date(date + 'T00:00:00');
   d.setDate(d.getDate() + 1);
@@ -541,8 +541,8 @@ function mRAddBlank() {
 function mRFillRange() {
   const start = document.getElementById('r-range-start').value;
   const end   = document.getElementById('r-range-end').value;
-  if (!start || !end) { showToast('â ï¸ Select both start and end dates'); return; }
-  if (start > end)    { showToast('â ï¸ Start must be before end date'); return; }
+  if (!start || !end) { showToast('⚠️ Select both start and end dates'); return; }
+  if (start > end)    { showToast('⚠️ Start must be before end date'); return; }
   document.getElementById('m-days-list').innerHTML = '';
   let cur = new Date(start + 'T00:00:00');
   const last = new Date(end + 'T00:00:00');
@@ -588,8 +588,8 @@ function saveRental() {
   const vId        = parseInt(document.getElementById('r-vehicle').value);
   const dayEntries = mRGetEntries();
 
-  if (!vId)              { showToast('â ï¸ Please select a vehicle'); return; }
-  if (!dayEntries.length){ showToast('â ï¸ Please add at least one day'); return; }
+  if (!vId)              { showToast('⚠️ Please select a vehicle'); return; }
+  if (!dayEntries.length){ showToast('⚠️ Please add at least one day'); return; }
 
   const total = dayEntries.reduce((s, e) => s + e.cost, 0);
   const start = dayEntries[0].date;
@@ -617,7 +617,7 @@ function saveRental() {
   mobileData.rentals.push(rental);
   mobileData.nextId.rental++;
   saveToStorage();
-  showToast('â Rental saved!');
+  showToast('✅ Rental saved!');
   setTimeout(() => showScreen('screen-home'), 800);
   autoSyncToCloud();
 }
@@ -637,9 +637,9 @@ function saveExpense() {
   const desc   = document.getElementById('e-desc').value.trim();
   const date   = document.getElementById('e-date').value;
 
-  if (!date)            { showToast('â ï¸ Please enter a date'); return; }
-  if (!desc)            { showToast('â ï¸ Please enter a description'); return; }
-  if (!amount || isNaN(amount)) { showToast('â ï¸ Please enter a valid amount'); return; }
+  if (!date)            { showToast('⚠️ Please enter a date'); return; }
+  if (!desc)            { showToast('⚠️ Please enter a description'); return; }
+  if (!amount || isNaN(amount)) { showToast('⚠️ Please enter a valid amount'); return; }
 
   const vIdRaw = document.getElementById('e-vehicle').value;
   const expense = {
@@ -657,7 +657,7 @@ function saveExpense() {
   mobileData.expenses.push(expense);
   mobileData.nextId.expense++;
   saveToStorage();
-  showToast('â Expense saved!');
+  showToast('✅ Expense saved!');
   setTimeout(() => showScreen('screen-home'), 800);
   autoSyncToCloud();
 }
@@ -676,12 +676,12 @@ function renderEntries() {
   const list = document.getElementById('entries-list');
   if (activeTab === 'rentals') {
     if (!mobileData.rentals.length) {
-      list.innerHTML = '<div class="empty-state"><div class="emoji">ð</div><p>No rentals added yet</p></div>';
+      list.innerHTML = '<div class="empty-state"><div class="emoji">🚗</div><p>No rentals added yet</p></div>';
       return;
     }
     list.innerHTML = [...mobileData.rentals].reverse().map(function(r) {
       const v = VEHICLES.find(x => x.id === r.vehicleId);
-      const vName = v ? v.brand + ' ' + v.model : 'â';
+      const vName = v ? v.brand + ' ' + v.model : '—';
       const sel = selectedEntries.has('rental:' + r.id);
       return '<div class="entry-card' + (sel ? ' selected' : '') + '" onclick="toggleSelect(\'rental\',' + r.id + ')">' +
         '<div class="entry-check">' + (sel ? '&#10003;' : '') + '</div>' +
@@ -701,7 +701,7 @@ function renderEntries() {
     }).join('');
   } else {
     if (!mobileData.expenses.length) {
-      list.innerHTML = '<div class="empty-state"><div class="emoji">ð¸</div><p>No expenses added yet</p></div>';
+      list.innerHTML = '<div class="empty-state"><div class="emoji">💸</div><p>No expenses added yet</p></div>';
       return;
     }
     list.innerHTML = [...mobileData.expenses].reverse().map(function(e) {
@@ -711,7 +711,7 @@ function renderEntries() {
         '<div class="entry-check">' + (sel ? '&#10003;' : '') + '</div>' +
         '<div class="entry-info">' +
           '<div class="entry-id">' + (e.category || 'Expense') + '</div>' +
-          '<div class="entry-main">' + (e.description || 'â') + '</div>' +
+          '<div class="entry-main">' + (e.description || '—') + '</div>' +
           '<div class="entry-sub">' + e.date + (v ? ' &middot; ' + v.brand + ' ' + v.model : '') + '</div>' +
         '</div>' +
         '<div style="text-align:right;flex-shrink:0">' +
@@ -821,7 +821,7 @@ __________________
     if (totalRev && totalExp) msg += 'Net_ICON Net:      ' + fmt(totalRev - totalExp);
   }
   // replace placeholders with emoji
-  msg = msg.replace(/Rental_ICON/g,'ð').replace(/Expense_ICON/g,'ð¸').replace(/TLE_ICON/g,'ð').replace(/Rev_ICON/g,'ðµ').replace(/Exp_ICON/g,'ð¤').replace(/Net_ICON/g,'â').replace(/* */g,'**');
+  msg = msg.replace(/Rental_ICON/g,'🚗').replace(/Expense_ICON/g,'💸').replace(/TLE_ICON/g,'📋').replace(/Rev_ICON/g,'💵').replace(/Exp_ICON/g,'📤').replace(/Net_ICON/g,'✅').replace(/* */g,'**');
   const url = 'https://wa.me/?text=' + encodeURIComponent(msg);
   if (navigator.share) { navigator.share({ text: msg }).catch(function() { window.open(url, '_blank'); }); }
   else { window.open(url, '_blank'); }
@@ -928,7 +928,7 @@ function renderExport() {
 
 function exportData() {
   if (!mobileData.rentals.length && !mobileData.expenses.length) {
-    showToast('â ï¸ No entries to export yet'); return;
+    showToast('⚠️ No entries to export yet'); return;
   }
   const payload = {
     type: 'mobile_import',
@@ -944,7 +944,7 @@ function exportData() {
   a.download = 'TLE_Mobile_' + new Date().toISOString().slice(0,10) + '.json';
   a.click();
   URL.revokeObjectURL(url);
-  showToast('ð¥ File downloaded!');
+  showToast('📥 File downloaded!');
 }
 
 function clearAllData() {
@@ -952,7 +952,7 @@ function clearAllData() {
   mobileData = { rentals: [], expenses: [], nextId: { rental: 1, expense: 1 } };
   saveToStorage();
   renderExport();
-  showToast('ð All entries cleared');
+  showToast('🗑 All entries cleared');
 }
 
 // ===================== TOAST =====================
@@ -997,7 +997,7 @@ function renderCRList() {
   const list = document.getElementById('cr-item-list');
   if (crActiveTab === 'rentals') {
     if (!mobileData.rentals.length) {
-      list.innerHTML = '<div class="empty-state"><div class="emoji">ð</div><p>No rentals saved yet</p></div>'; return;
+      list.innerHTML = '<div class="empty-state"><div class="emoji">🚗</div><p>No rentals saved yet</p></div>'; return;
     }
     list.innerHTML = [...mobileData.rentals].reverse().map(r => {
       const v = VEHICLES.find(x => x.id === r.vehicleId);
@@ -1006,14 +1006,14 @@ function renderCRList() {
         <input type="checkbox" ${checked?'checked':''} style="width:20px;height:20px;accent-color:#1a56db;flex-shrink:0;" onclick="event.stopPropagation();" onchange="crToggle('rental',${r.id},this.closest('label'))">
         <div style="flex:1;">
           <div style="font-weight:800;font-size:13px;color:#1a56db;">${r.invoiceId||'#'+r.id}</div>
-          <div style="font-size:12px;color:#64748b;">${r.clientName||'No client'} Â· ${v?v.brand+' '+v.model:'â'} Â· ${r.start}</div>
+          <div style="font-size:12px;color:#64748b;">${r.clientName||'No client'} · ${v?v.brand+' '+v.model:'—'} · ${r.start}</div>
         </div>
         <div style="font-weight:800;color:#059669;font-size:14px;">$${Number(r.total).toFixed(2)}</div>
       </label>`;
     }).join('');
   } else {
     if (!mobileData.expenses.length) {
-      list.innerHTML = '<div class="empty-state"><div class="emoji">ð¸</div><p>No expenses saved yet</p></div>'; return;
+      list.innerHTML = '<div class="empty-state"><div class="emoji">💸</div><p>No expenses saved yet</p></div>'; return;
     }
     list.innerHTML = [...mobileData.expenses].reverse().map(e => {
       const v = VEHICLES.find(x => x.id === e.vehicleId);
@@ -1022,7 +1022,7 @@ function renderCRList() {
         <input type="checkbox" ${checked?'checked':''} style="width:20px;height:20px;accent-color:#f59e0b;flex-shrink:0;" onclick="event.stopPropagation();" onchange="crToggle('expense',${e.id},this.closest('label'))">
         <div style="flex:1;">
           <div style="font-weight:800;font-size:13px;">${e.description}</div>
-          <div style="font-size:12px;color:#64748b;">${e.category} Â· ${e.date}${v?' Â· '+v.brand+' '+v.model:''}</div>
+          <div style="font-size:12px;color:#64748b;">${e.category} · ${e.date}${v?' · '+v.brand+' '+v.model:''}</div>
         </div>
         <div style="font-weight:800;color:#dc2626;font-size:14px;">$${Number(e.amount).toFixed(2)}</div>
       </label>`;
@@ -1069,7 +1069,7 @@ function updateCRSummary() {
 function buildMobileCombinedReceipt() {
   const selR = mobileData.rentals.filter(r => crSelectedRentals.has(r.id));
   const selE = mobileData.expenses.filter(e => crSelectedExpenses.has(e.id));
-  if (!selR.length && !selE.length) { showToast('â ï¸ Select at least one item'); return; }
+  if (!selR.length && !selE.length) { showToast('⚠️ Select at least one item'); return; }
 
   crReceiptSeq++;
   localStorage.setItem('tle_cr_seq', crReceiptSeq);
@@ -1080,47 +1080,47 @@ function buildMobileCombinedReceipt() {
   const dateStr = new Date().toLocaleDateString('en-TT', {year:'numeric',month:'long',day:'numeric'});
 
   // Build WhatsApp text summary (WhatsApp markdown: *bold*, _italic_)
-  let waText = 'ð¢ *TLE TRANSPORT SERVICES LIMITED*\n';
-  waText += 'ð Receipt: *' + crNo + '*\n';
-  waText += 'ð ' + dateStr + '\n';
-  waText += 'ââââââââââââââââââââ\n\n';
+  let waText = '🏢 *TLE TRANSPORT SERVICES LIMITED*\n';
+  waText += '📋 Receipt: *' + crNo + '*\n';
+  waText += '📅 ' + dateStr + '\n';
+  waText += '━━━━━━━━━━━━━━━━━━━━\n\n';
   if (selR.length) {
-    waText += 'ð *RENTALS*\n';
+    waText += '🚗 *RENTALS*\n';
     selR.forEach(r => {
       const v = VEHICLES.find(x => x.id === r.vehicleId);
-      waText += 'âª *' + (r.invoiceId || '#' + r.id) + '*\n';
+      waText += '▪ *' + (r.invoiceId || '#' + r.id) + '*\n';
       if (r.clientName) waText += '  Client: ' + r.clientName + '\n';
       if (v) waText += '  Vehicle: ' + v.brand + ' ' + v.model + '\n';
-      waText += '  Period: ' + r.start + ' â ' + r.end + '\n';
+      waText += '  Period: ' + r.start + ' – ' + r.end + '\n';
       waText += '  Amount: *$' + r.total.toFixed(2) + ' TTD*\n\n';
     });
     waText += 'Rentals Subtotal: *$' + rTotal.toFixed(2) + ' TTD*\n\n';
   }
   if (selE.length) {
-    waText += 'ð¸ *EXPENSES*\n';
+    waText += '💸 *EXPENSES*\n';
     selE.forEach(e => {
-      waText += 'âª ' + e.date + ' â ' + e.category + '\n';
+      waText += '▪ ' + e.date + ' — ' + e.category + '\n';
       waText += '  ' + e.description + '\n';
       waText += '  Amount: *$' + e.amount.toFixed(2) + ' TTD*\n\n';
     });
     waText += 'Expenses Subtotal: *$' + eTotal.toFixed(2) + ' TTD*\n\n';
   }
-  waText += 'ââââââââââââââââââââ\n';
-  waText += 'ð° *GRAND TOTAL: $' + grand.toFixed(2) + ' TTD*\n';
-  waText += 'ââââââââââââââââââââ\n\n';
-  waText += '_TLE Transport Services Limited Â· Trinidad & Tobago_';
+  waText += '━━━━━━━━━━━━━━━━━━━━\n';
+  waText += '💰 *GRAND TOTAL: $' + grand.toFixed(2) + ' TTD*\n';
+  waText += '━━━━━━━━━━━━━━━━━━━━\n\n';
+  waText += '_TLE Transport Services Limited · Trinidad & Tobago_';
 
   const waEncoded = encodeURIComponent(waText);
   const waTextJSON = JSON.stringify(waText); // safe to embed in JS
 
   const rRows = selR.map(r => {
     const v = VEHICLES.find(x => x.id === r.vehicleId);
-    return `<tr><td>${r.invoiceId||'#'+r.id}</td><td>${r.clientName||'â'}</td><td>${v?v.brand+' '+v.model:'â'}</td><td>${r.type}</td><td>${r.start} â ${r.end}</td><td style="text-align:right;font-weight:700;color:#059669;">$${r.total.toFixed(2)} TTD</td></tr>`;
+    return `<tr><td>${r.invoiceId||'#'+r.id}</td><td>${r.clientName||'—'}</td><td>${v?v.brand+' '+v.model:'—'}</td><td>${r.type}</td><td>${r.start} – ${r.end}</td><td style="text-align:right;font-weight:700;color:#059669;">$${r.total.toFixed(2)} TTD</td></tr>`;
   }).join('');
 
   const eRows = selE.map(e => {
     const v = VEHICLES.find(x => x.id === e.vehicleId);
-    return `<tr><td>${e.date}</td><td>${e.category}</td><td>${e.description}</td><td>${v?v.brand+' '+v.model:'â'}</td><td style="text-align:right;font-weight:700;color:#dc2626;">$${e.amount.toFixed(2)} TTD</td></tr>`;
+    return `<tr><td>${e.date}</td><td>${e.category}</td><td>${e.description}</td><td>${v?v.brand+' '+v.model:'—'}</td><td style="text-align:right;font-weight:700;color:#dc2626;">$${e.amount.toFixed(2)} TTD</td></tr>`;
   }).join('');
 
   const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -1149,7 +1149,7 @@ function buildMobileCombinedReceipt() {
   </style></head>
   <body>
   <div class="action-bar">
-    <button class="btn-print" onclick="window.print()">ð¨ Print / PDF</button>
+    <button class="btn-print" onclick="window.print()">🖨 Print / PDF</button>
     <button id="btn-wa" class="btn-wa" onclick="shareWhatsApp()">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Share via WhatsApp
@@ -1165,7 +1165,7 @@ function buildMobileCombinedReceipt() {
       _busy = true;
       var btn = document.getElementById('btn-wa');
       var orig = btn.innerHTML;
-      btn.innerHTML = 'â³ Generating PDFâ¦';
+      btn.innerHTML = '⏳ Generating PDF…';
       btn.disabled = true;
       try {
         var el  = document.getElementById('receipt-body');
@@ -1204,21 +1204,21 @@ function buildMobileCombinedReceipt() {
     </div>
     <div style="text-align:right;"><div class="badge">COMBINED RECEIPT</div><div class="rec-no">${crNo}</div><div class="rec-date">${dateStr}</div></div>
   </div>
-  ${selR.length?`<h3>ð Rentals (${selR.length})</h3><table><thead><tr><th>Invoice ID</th><th>Client</th><th>Vehicle</th><th>Type</th><th>Period</th><th>Amount</th></tr></thead><tbody>${rRows}</tbody></table>`:''}
-  ${selE.length?`<h3 class="exp">ð¸ Expenses (${selE.length})</h3><table><thead><tr><th>Date</th><th>Category</th><th>Description</th><th>Vehicle</th><th>Amount</th></tr></thead><tbody>${eRows}</tbody></table>`:''}
+  ${selR.length?`<h3>🚗 Rentals (${selR.length})</h3><table><thead><tr><th>Invoice ID</th><th>Client</th><th>Vehicle</th><th>Type</th><th>Period</th><th>Amount</th></tr></thead><tbody>${rRows}</tbody></table>`:''}
+  ${selE.length?`<h3 class="exp">💸 Expenses (${selE.length})</h3><table><thead><tr><th>Date</th><th>Category</th><th>Description</th><th>Vehicle</th><th>Amount</th></tr></thead><tbody>${eRows}</tbody></table>`:''}
   <div class="sum">
     ${selR.length?`<div class="sum-row"><span>Rentals Subtotal</span><span style="font-weight:700;color:#059669;">$${rTotal.toFixed(2)} TTD</span></div>`:''}
     ${selE.length?`<div class="sum-row"><span>Expenses Subtotal</span><span style="font-weight:700;color:#dc2626;">$${eTotal.toFixed(2)} TTD</span></div>`:''}
     <div class="grand"><span>GRAND TOTAL</span><span>$${grand.toFixed(2)} TTD</span></div>
   </div>
   <div><div class="sig">Authorised Signature</div></div>
-  <p style="margin-top:20px;font-size:11px;color:#94a3b8;text-align:right;">Generated: ${new Date().toLocaleString()} Â· TLE Transport Services Limited</p>
+  <p style="margin-top:20px;font-size:11px;color:#94a3b8;text-align:right;">Generated: ${new Date().toLocaleString()} · TLE Transport Services Limited</p>
   </div>
   </body></html>`;
 
   const w = window.open('', '_blank');
-  if (w) { w.document.write(html); w.document.close(); showToast('â Receipt opened!'); }
-  else showToast('â ï¸ Allow pop-ups to view receipt');
+  if (w) { w.document.write(html); w.document.close(); showToast('✅ Receipt opened!'); }
+  else showToast('⚠️ Allow pop-ups to view receipt');
 }
 /* ==================== END MOBILE COMBINED RECEIPT ==================== */
 
@@ -1310,14 +1310,14 @@ async function jbSaveKey() {
   jbKey = raw;
   localStorage.setItem('tle_gh_token', jbKey);
   document.getElementById('jbsetup-modal').style.display = 'none';
-  gDriveStatus('Connectingâ¦', 'ð');
+  gDriveStatus('Connecting…', '🔄');
 
   if (jbBin) {
     const test = await _ghReadRaw();
     if (test !== false) {
       jbOn = true; _jbBtn(true);
-      gDriveStatus('Connected â', 'âï¸');
-      showToast('âï¸ Cloud connected!');
+      gDriveStatus('Connected ✓', '☁️');
+      showToast('☁️ Cloud connected!');
       return;
     }
     jbBin = null;
@@ -1379,7 +1379,7 @@ async function jbSaveKey() {
   } catch(e) { jbShowError('Network error: ' + e.message); }
 }
 
-// Push only unsynced entries to cloud â called automatically on save and manually via button
+// Push only unsynced entries to cloud — called automatically on save and manually via button
 async function autoSyncToCloud() {
   if (!jbOn || !jbKey || !jbBin) return; // silently skip if not connected
 
@@ -1388,7 +1388,7 @@ async function autoSyncToCloud() {
   if (!unsyncedR.length && !unsyncedE.length) return; // nothing new to push
 
   const rawResult = await _ghReadRaw();
-  if (rawResult === false) return; // network/API error â don't overwrite cloud, retry next time
+  if (rawResult === false) return; // network/API error — don't overwrite cloud, retry next time
   const base = rawResult || {   // null = empty gist, start fresh
     nextId: { rental:5, vehicle:12, expense:10 }, rentalInvoiceSeq: 4,
     vehicles: VEHICLES.map(v => ({...v, daily:DAILY_RATES[v.id], weekly:WEEKLY_RATES[v.id], monthly:MONTHLY_RATES[v.id], status:'Available', fuel:'Gasoline'})),
@@ -1414,26 +1414,26 @@ async function autoSyncToCloud() {
     mobileData.rentals  = mobileData.rentals.map(r  => unsyncedR.includes(r)  ? {...r,  _synced: true} : r);
     mobileData.expenses = mobileData.expenses.map(e => unsyncedE.includes(e) ? {...e, _synced: true} : e);
     saveToStorage();
-    gDriveStatus('Synced â ' + new Date().toLocaleTimeString(), 'âï¸');
+    gDriveStatus('Synced ✓ ' + new Date().toLocaleTimeString(), '☁️');
   }
 }
 
-// Manual sync button â pushes any remaining unsynced entries
+// Manual sync button — pushes any remaining unsynced entries
 async function gMergeAndSync() {
-  if (!jbKey) { showToast('âï¸ Connect cloud first'); jbConnect(); return; }
-  if (!jbBin) { showToast('â ï¸ Connect cloud first'); jbConnect(); return; }
+  if (!jbKey) { showToast('☁️ Connect cloud first'); jbConnect(); return; }
+  if (!jbBin) { showToast('⚠️ Connect cloud first'); jbConnect(); return; }
 
   const unsyncedR = mobileData.rentals.filter(r => !r._synced);
   const unsyncedE = mobileData.expenses.filter(e => !e._synced);
   if (!unsyncedR.length && !unsyncedE.length) {
-    showToast('â Everything already synced!');
-    gDriveStatus('All entries synced â', 'âï¸');
+    showToast('✅ Everything already synced!');
+    gDriveStatus('All entries synced ✓', '☁️');
     return;
   }
 
-  gDriveStatus('Syncingâ¦', 'ð');
+  gDriveStatus('Syncing…', '🔄');
   await autoSyncToCloud();
-  showToast('â Synced: +' + unsyncedR.length + ' rentals, +' + unsyncedE.length + ' expenses');
+  showToast('✅ Synced: +' + unsyncedR.length + ' rentals, +' + unsyncedE.length + ' expenses');
 }
 
 async function _ghReadRaw() {
@@ -1474,20 +1474,20 @@ async function _ghWriteRaw(payload) {
 
 function gDriveStatus(msg, icon) {
   const el = document.getElementById('gdrive-sync-status');
-  if (el) el.textContent = (icon || 'âï¸') + ' ' + msg;
+  if (el) el.textContent = (icon || '☁️') + ' ' + msg;
 }
 
 function _jbBtn(on) {
   const b = document.getElementById('btn-gdrive-connect');
   if (!b) return;
-  b.textContent = on ? 'âï¸ Cloud Connected' : 'ð Connect Cloud Sync';
+  b.textContent = on ? '☁️ Cloud Connected' : '🔗 Connect Cloud Sync';
   b.style.background = on ? '#059669' : '#1a3a6b';
 }
 
 function jbShowError(msg) {
-  gDriveStatus(msg, 'â');
+  gDriveStatus(msg, '❌');
   const el = document.getElementById('jb-error');
-  if (el) { el.textContent = 'â ' + msg; el.style.display = 'block'; }
+  if (el) { el.textContent = '❌ ' + msg; el.style.display = 'block'; }
   console.error('[TLE Cloud]', msg);
 }
 
@@ -1540,23 +1540,23 @@ window.addEventListener('DOMContentLoaded', async () => {
 <div id="jbsetup-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center;padding:12px;">
   <div style="background:#fff;border-radius:20px;max-width:440px;width:100%;padding:22px;box-shadow:0 20px 60px rgba(0,0,0,.3);max-height:94vh;overflow-y:auto;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-      <span style="font-size:26px;">âï¸</span>
+      <span style="font-size:26px;">☁️</span>
       <div>
         <h2 style="font-size:17px;color:#1a3a6b;margin:0;">Connect Cloud Sync</h2>
-        <p style="font-size:11px;color:#64748b;margin:2px 0 0;">Via GitHub â Free Â· same token on phone &amp; desktop</p>
+        <p style="font-size:11px;color:#64748b;margin:2px 0 0;">Via GitHub — Free · same token on phone &amp; desktop</p>
       </div>
     </div>
     <div style="background:#f0f9ff;border:1.5px solid #7dd3fc;border-radius:12px;padding:14px;margin-bottom:12px;">
-      <p style="font-size:12px;font-weight:800;color:#0369a1;margin:0 0 8px;">ð One-time setup (2 mins):</p>
+      <p style="font-size:12px;font-weight:800;color:#0369a1;margin:0 0 8px;">📋 One-time setup (2 mins):</p>
       <ol style="font-size:13px;color:#1e293b;line-height:2.3;padding-left:18px;margin:0;">
-        <li>Go to <a href="https://github.com" target="_blank" style="color:#1a56db;font-weight:700;">github.com</a> â <strong>Sign up</strong> (free) or log in</li>
-        <li>Tap your <strong>profile photo</strong> â <strong>Settings</strong></li>
-        <li>Scroll down â <strong>Developer settings</strong></li>
-        <li><strong>Personal access tokens</strong> â <strong>Tokens (classic)</strong></li>
+        <li>Go to <a href="https://github.com" target="_blank" style="color:#1a56db;font-weight:700;">github.com</a> → <strong>Sign up</strong> (free) or log in</li>
+        <li>Tap your <strong>profile photo</strong> → <strong>Settings</strong></li>
+        <li>Scroll down → <strong>Developer settings</strong></li>
+        <li><strong>Personal access tokens</strong> → <strong>Tokens (classic)</strong></li>
         <li><strong>Generate new token (classic)</strong></li>
-        <li>Name: <em>TLE Sync</em> Â· Expiry: <strong>No expiration</strong></li>
-        <li>Check only <strong>gist</strong> â â <strong>Generate token</strong></li>
-        <li>Copy the token (starts with <code>ghp_</code>) â paste below â</li>
+        <li>Name: <em>TLE Sync</em> · Expiry: <strong>No expiration</strong></li>
+        <li>Check only <strong>gist</strong> ✓ → <strong>Generate token</strong></li>
+        <li>Copy the token (starts with <code>ghp_</code>) → paste below ↓</li>
       </ol>
     </div>
     <div id="jb-error" style="display:none;background:#fef2f2;border:1px solid #fca5a5;border-radius:10px;padding:10px;margin-bottom:10px;font-size:12px;color:#dc2626;word-break:break-all;"></div>
@@ -1565,10 +1565,10 @@ window.addEventListener('DOMContentLoaded', async () => {
       style="width:100%;padding:13px;border:2px solid #e2e8f0;border-radius:10px;font-size:13px;margin-bottom:12px;font-family:monospace;box-sizing:border-box;"
       oninput="document.getElementById('jb-error').style.display='none'">
     <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:9px;margin-bottom:12px;">
-      <p style="font-size:11px;color:#166534;margin:0;">â Use the same token on your phone and desktop â all data syncs automatically.</p>
+      <p style="font-size:11px;color:#166534;margin:0;">✅ Use the same token on your phone and desktop — all data syncs automatically.</p>
     </div>
     <div style="display:flex;gap:10px;">
-      <button onclick="jbSaveKey()" style="flex:1;padding:13px;background:linear-gradient(135deg,#1a3a6b,#1a56db);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">âï¸ Connect</button>
+      <button onclick="jbSaveKey()" style="flex:1;padding:13px;background:linear-gradient(135deg,#1a3a6b,#1a56db);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">☁️ Connect</button>
       <button onclick="document.getElementById('jbsetup-modal').style.display='none'; document.getElementById('jb-error').style.display='none'" style="padding:13px 16px;background:#f1f5f9;color:#64748b;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;">Cancel</button>
     </div>
   </div>
@@ -1578,7 +1578,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 <!-- ========== CREATE RECEIPT SCREEN ========== -->
 <div class="screen" id="screen-receipt">
   <div class="topbar">
-    <button class="btn-back" onclick="showScreen('screen-home')">â Back</button>
+    <button class="btn-back" onclick="showScreen('screen-home')">← Back</button>
     <div class="topbar-info">
       <div class="topbar-title">Create Receipt</div>
       <div class="topbar-sub">Select items to include</div>
@@ -1587,8 +1587,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   <div class="entries-body">
     <div class="tab-row">
-      <button class="tab active" id="cr-tab-r" onclick="crSwitchTab('rentals')">ð Rentals</button>
-      <button class="tab" id="cr-tab-e" onclick="crSwitchTab('expenses')">ð¸ Expenses</button>
+      <button class="tab active" id="cr-tab-r" onclick="crSwitchTab('rentals')">🚗 Rentals</button>
+      <button class="tab" id="cr-tab-e" onclick="crSwitchTab('expenses')">💸 Expenses</button>
     </div>
 
     <div style="background:#f0f4ff;border-radius:12px;padding:10px 14px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;">
@@ -1606,7 +1606,7 @@ window.addEventListener('DOMContentLoaded', async () => {
       <span style="font-size:12px;color:#64748b;">Expenses: <strong id="mob-cr-e-sub" style="color:#dc2626;">$0.00 TTD</strong></span>
     </div>
     <div style="font-size:16px;font-weight:800;color:#1a3a6b;margin-bottom:10px;">Grand Total: <span id="mob-cr-grand">$0.00 TTD</span></div>
-    <button onclick="buildMobileCombinedReceipt()" style="width:100%;padding:16px;background:linear-gradient(135deg,#d97706,#f59e0b);color:#1e293b;border:none;border-radius:14px;font-size:17px;font-weight:800;cursor:pointer;">ð§¾ Generate Receipt</button>
+    <button onclick="buildMobileCombinedReceipt()" style="width:100%;padding:16px;background:linear-gradient(135deg,#d97706,#f59e0b);color:#1e293b;border:none;border-radius:14px;font-size:17px;font-weight:800;cursor:pointer;">🧾 Generate Receipt</button>
   </div>
 </div>
 
